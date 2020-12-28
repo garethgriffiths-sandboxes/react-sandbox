@@ -8,7 +8,7 @@ trigger:
 
 variables:
   uiSource: "react-sandbox"
-  uiBuild: "$(uiSource)/build"
+  uiBuild: "$(uiSource)/dist"
 
 pool:
   vmthumbnail: ../"ubuntu-latest"
