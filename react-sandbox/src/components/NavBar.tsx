@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: theme.spacing(2),
     },
     title: {
-      flexGrow: 1, 
+      flexGrow: 1,
     },
   }),
 );
@@ -25,8 +25,8 @@ export default function NavAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Stock History
+          <Typography variant="h5" className={classes.title}>
+            React Sandbox
           </Typography>
         </Toolbar>
       </AppBar>

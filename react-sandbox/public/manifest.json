@@ -1,6 +1,5 @@
 {
   "short_name": "React Sandbox",
-  "name": "A place to experiment and share new ideas using React.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +7,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
