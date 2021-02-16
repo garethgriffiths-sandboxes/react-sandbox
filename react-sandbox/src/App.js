@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -20,16 +17,10 @@ import Sunburst from './components/Sunburst';
 import PieChart from './components/PieChart';
 import Mapbox from './components/Mapbox';
 import AgGrid from './components/AgGrid';
-// Lattice
+import NavBar from './components/NavBar';
 import { Widget } from '@latticejs/widgets';
-
-// Material icons
-import DayIcon from '@material-ui/icons/WbSunnyOutlined';
-import NightIcon from '@material-ui/icons/Brightness3Outlined';
-
 import 'typeface-roboto';
 
-// Custom Style
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
@@ -84,12 +75,7 @@ function a11yProps(index) {
 const App = (props) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
-  const { classes, nightMode } = props;
-
-  const handleNightModeChange = () => {
-    const { updateTheme, nightMode } = props;
-    updateTheme(!nightMode);
-  };
+  const { classes } = props;
 
   const handleChange = (event, newTab) => {
     setSelectedTab(newTab);
@@ -97,18 +83,8 @@ const App = (props) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit" className={classes.flex}>
-            React Sandbox
-          </Typography>
-          <Tooltip title="Toggle Night Mode" enterDelay={300}>
-            <IconButton onClick={handleNightModeChange} color="inherit">
-              {nightMode ? <DayIcon /> : <NightIcon />}
-            </IconButton>
-          </Tooltip>
-        </Toolbar>
-      </AppBar>
+      <NavBar position="static" className={classes.appBar}>
+      </NavBar>
       <AppBar position="static" color="default">
         <Tabs
           value={selectedTab}
