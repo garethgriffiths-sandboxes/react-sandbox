@@ -6,7 +6,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { token } from '../config';
 import '../css/style.css';
 
-class Mapbox extends Component {
+class MapBox extends Component {
   constructor(props) {
     super(props);
 
@@ -241,4 +241,4 @@ class Mapbox extends Component {
   }
 }
 
-export default Mapbox;
+export default MapBox;

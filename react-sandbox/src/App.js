@@ -8,18 +8,10 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import PieChartIcon from '@material-ui/icons/PieChart';
-import GridOnIcon from '@material-ui/icons/GridOn';
-import MapIcon from '@material-ui/icons/Map';
 import Box from '@material-ui/core/Box';
 
-import Sunburst from './components/Sunburst';
-import PieChart from './components/PieChart';
-import Mapbox from './components/Mapbox';
-import AgGrid from './components/AgGrid';
+import MapBox from './components/MapBox';
 import NavBar from './components/NavBar';
-import { Widget } from '@latticejs/widgets';
-import 'typeface-roboto';
 
 const styles = (theme) => ({
   root: {
@@ -30,7 +22,7 @@ const styles = (theme) => ({
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.primary.contrastText
   },
   widget: {
     marginTop: theme.spacing(2),
@@ -93,38 +85,13 @@ const App = (props) => {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="Rechart" icon={<PieChartIcon />} {...a11yProps(0)} />
-          <Tab label="Ag-Grid" icon={<GridOnIcon />} {...a11yProps(1)} />
-          <Tab label="Map" icon={<MapIcon />} {...a11yProps(2)} />
+          <Tab label="Delivery Tracking" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
       <TabPanel value={selectedTab} index={0}>
-        <Grid container justify="flex-start" spacing={Number('4')}>
-          <Grid item xs={6}>
-            <Widget className={classes.widget} title="State & County Data" border="top">
-              <Sunburst />
-            </Widget>
-          </Grid>
-          <Grid item xs={6}>
-            <Widget className={classes.widget} title="State Data" border="top">
-              <PieChart />
-            </Widget>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel value={selectedTab} index={1}>
         <Grid container justify="center" spacing={Number(0)}>
           <Grid item xs={12}>
-            <Widget className={classes.widget} title="State & County Population" border="top">
-              <AgGrid />
-            </Widget>
-          </Grid>
-        </Grid>
-      </TabPanel>
-      <TabPanel value={selectedTab} index={2}>
-        <Grid container justify="center" spacing={Number(0)}>
-          <Grid item xs={12}>
-            <Mapbox />
+            <MapBox />
           </Grid>
         </Grid>
       </TabPanel>
