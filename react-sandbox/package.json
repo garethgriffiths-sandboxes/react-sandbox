@@ -12,6 +12,7 @@
     "@material-ui/icons": "^4.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-smooth": "1.0.2",
     "recharts": "^1.8.5",
     "typeface-poppins": "^1.1.13",

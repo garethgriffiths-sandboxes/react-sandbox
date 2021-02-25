@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LatticeSunburst from '@latticejs/recharts-sunburst';
 import { Tooltip } from '@latticejs/mui-recharts';
-import { evaluateChartData } from '../helper/helper';
+import { evaluateChartData } from '../../helper/helper';
 
 class Sunburst extends Component {
   constructor(props) {

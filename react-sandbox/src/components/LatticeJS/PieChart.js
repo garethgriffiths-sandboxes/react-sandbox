@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Cell, PieChart, Pie, Tooltip } from '@latticejs/mui-recharts';
-import { evaluateChartData } from '../helper/helper';
+import { evaluateChartData } from '../../helper/helper';
 
 class Chart extends Component {
   constructor(props) {

@@ -10,8 +10,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 
-import MapBox from './components/MapBox';
 import NavBar from './components/NavBar';
+import DeliveryTracking from './components/DeliveryTracking';
 
 const styles = (theme) => ({
   root: {
@@ -57,7 +57,7 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-function a11yProps(index) {
+function TabProps(index) {
   return {
     id: `scrollable-force-tab-${index}`,
     'aria-controls': `scrollable-force-tabpanel-${index}`,
@@ -85,13 +85,13 @@ const App = (props) => {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="Delivery Tracking" {...a11yProps(0)} />
+          <Tab label="Delivery Tracking" {...TabProps(0)} />
         </Tabs>
       </AppBar>
       <TabPanel value={selectedTab} index={0}>
         <Grid container justify="center" spacing={Number(0)}>
           <Grid item xs={12}>
-            <MapBox />
+            <DeliveryTracking title='hello'></DeliveryTracking>
           </Grid>
         </Grid>
       </TabPanel>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // Lattice packages
 import LatticeAgGrid from '@latticejs/ag-grid';
 import '@latticejs/ag-grid/styles/lattice-ag-grid-style.css';
-import dataArr from '../resources/data';
+import dataArr from '../../resources/data';
 
 class AgGrid extends Component {
   constructor(props) {

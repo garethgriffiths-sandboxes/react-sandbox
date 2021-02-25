@@ -3,7 +3,7 @@ import LatticeMap from '@latticejs/map';
 import Mapboxgl from 'mapbox-gl';
 import '@latticejs/map/styles/style.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-import { token } from '../config';
+import { token } from '../../config';
 import '../css/style.css';
 
 class MapBox extends Component {
