@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
@@ -74,28 +79,34 @@ const App = (props) => {
   };
 
   return (
-    <div className={classes.root}>
-      <NavBar position="static" className={classes.appBar}>
-      </NavBar>
-      <AppBar position="static" color="default">
-        <Tabs
-          value={selectedTab}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          aria-label="scrollable force tabs example"
-        >
-          <Tab label="Delivery Tracking" {...TabProps(0)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={selectedTab} index={0}>
-        <Grid container justify="center" spacing={Number(0)}>
-          <Grid item xs={12}>
-            <DeliveryTracking title='hello'></DeliveryTracking>
-          </Grid>
-        </Grid>
-      </TabPanel>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" render={() => (
+          <div className={classes.root}>
+            <NavBar position="static" className={classes.appBar}>
+            </NavBar>
+            <AppBar position="static" color="default">
+              <Tabs
+                value={selectedTab}
+                onChange={handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                aria-label="scrollable force tabs example"
+              >
+                <Tab label="Delivery Tracking" {...TabProps(0)} />
+              </Tabs>
+            </AppBar>
+            <TabPanel value={selectedTab} index={0}>
+              <Grid container justify="center" spacing={Number(0)}>
+                <Grid item xs={12}>
+                  <DeliveryTracking></DeliveryTracking>
+                </Grid>
+              </Grid>
+            </TabPanel>
+          </div>)} exact />
+        <Route path="/delivery-tracking" render={() => <DeliveryTracking></DeliveryTracking>} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 
