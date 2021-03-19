@@ -9,11 +9,18 @@ import Typography from '@material-ui/core/Typography';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
 import HistoryIcon from '@material-ui/icons/History';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import PhoneIcon from '@material-ui/icons/Phone';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
+
+type DeliveryViewProps = {
+    pageTitle: string
+}
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -42,12 +49,12 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.palette.secondary.contrastText,
             backgroundColor: theme.palette.secondary.main,
         },
+        button: {
+            color: theme.palette.secondary.contrastText,
+            backgroundColor: theme.palette.secondary.main,
+        },
     }),
 );
-
-type DeliveryViewProps = {
-    pageTitle: string
-}
 
 const DeliveryView: FunctionComponent<DeliveryViewProps> = ({ pageTitle }: DeliveryViewProps) => {
     const classes = useStyles();
@@ -71,7 +78,24 @@ const DeliveryView: FunctionComponent<DeliveryViewProps> = ({ pageTitle }: Deliv
                 alignItems="center"
             >
                 <Typography>
+                    jnjknjnjn
                 </Typography>
+                <Button
+                    variant="contained"
+                    color="default"
+                    className={classes.button}
+                    startIcon={<PhoneIcon />}
+                >
+                    Call Driver
+      </Button>
+      <Button
+                    variant="contained"
+                    color="default"
+                    className={classes.button}
+                    startIcon={<PersonPinIcon />}
+                >
+                    Share Location
+      </Button>
             </Grid>
             <Tabs color="inherit"
                 variant="fullWidth"
