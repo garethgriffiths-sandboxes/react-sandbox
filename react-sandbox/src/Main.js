@@ -8,6 +8,9 @@ const Main = () => {
   const createTheme = () => {
     return createMuiTheme({
       palette: {
+        background: {
+          default: "#FFFFFF"
+        },
         primary: {
           main: '#0074F0',
         },
