@@ -4,17 +4,22 @@ import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import IconButton from '@material-ui/core/IconButton';
 
 import MyLocationIcon from '@material-ui/icons/MyLocation';
 import HistoryIcon from '@material-ui/icons/History';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         deliveryTracking: {
+            color: 'secondary',
+            backgroundColor: '#FFFFFF',
             display: 'flex',
             flexWrap: 'wrap',
             '& > *': {
@@ -24,25 +29,53 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
             alignItems: 'center'
         },
+        iconButton: {
+            marginRight: theme.spacing(2),
+        },
+        pageTitle: {
+            display: 'none',
+            [theme.breakpoints.up('sm')]: {
+                display: 'block',
+            },
+        },
+        tabs: {
+            color: theme.palette.secondary.contrastText,
+            backgroundColor: theme.palette.secondary.main,
+        },
     }),
 );
 
-const DeliveryTracking: FunctionComponent<{}> = () => {
+type DeliveryViewProps = {
+    pageTitle: string
+}
+
+const DeliveryView: FunctionComponent<DeliveryViewProps> = ({ pageTitle }: DeliveryViewProps) => {
     const classes = useStyles();
 
     return <div className={classes.deliveryTracking}>
         <Paper variant="outlined" square>
-            <AppBar position="static">
+            <AppBar color="secondary" position="static">
                 <Toolbar>
-                    <Typography>
-                        React Sandbox
-                </Typography>
+                    <IconButton className={classes.iconButton} edge="start" color="inherit">
+                        <ArrowBackIcon />
+                    </IconButton>
+                    <Typography className={classes.pageTitle} variant="h6" noWrap>
+                        {pageTitle}
+                    </Typography>
                 </Toolbar>
             </AppBar>
-            <Tabs
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Typography>
+                </Typography>
+            </Grid>
+            <Tabs color="inherit"
                 variant="fullWidth"
-                indicatorColor="primary"
-                textColor="primary"
+                className={classes.tabs}
             >
                 <Tab icon={<MyLocationIcon />} label="Track" aria-label="Track" />
                 <Tab icon={<HistoryIcon />} label="History" aria-label="History" />
@@ -52,4 +85,4 @@ const DeliveryTracking: FunctionComponent<{}> = () => {
     </div>;
 }
 
-export default DeliveryTracking;
+export default DeliveryView;

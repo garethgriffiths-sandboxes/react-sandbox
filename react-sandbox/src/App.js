@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   BrowserRouter,
   Switch,
@@ -16,27 +16,17 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 
 import NavBar from './components/NavBar';
-import DeliveryTracking from './components/DeliveryTracking';
+import DeliveryView from './components/DeliveryTracking/DeliveryView';
 
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
-  },
-  flex: {
-    flexGrow: 1,
+    backgroundColor: '#FFFFFF',
   },
   appBar: {
     backgroundColor: theme.palette.primary[theme.palette.type],
     color: theme.palette.primary.contrastText
-  },
-  widget: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    padding: theme.spacing(4),
-  },
-  link: {
-    color: theme.palette.text.secondary,
-  },
+  }
 });
 
 function TabPanel(props) {
@@ -78,6 +68,8 @@ const App = (props) => {
     setSelectedTab(newTab);
   };
 
+  const deliveryViewPageTitle = "Help with Directions";
+
   return (
     <BrowserRouter>
       <Switch>
@@ -99,12 +91,12 @@ const App = (props) => {
             <TabPanel value={selectedTab} index={0}>
               <Grid container justify="center" spacing={Number(0)}>
                 <Grid item xs={12}>
-                  <DeliveryTracking></DeliveryTracking>
+                  <DeliveryView pageTitle={deliveryViewPageTitle}></DeliveryView>
                 </Grid>
               </Grid>
             </TabPanel>
           </div>)} exact />
-        <Route path="/delivery-tracking" render={() => <DeliveryTracking></DeliveryTracking>} />
+        <Route path="/delivery-tracking" render={() => <DeliveryView pageTitle={deliveryViewPageTitle}></DeliveryView>} />
       </Switch>
     </BrowserRouter>
   );
