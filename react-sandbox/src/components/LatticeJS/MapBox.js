@@ -4,7 +4,6 @@ import Mapboxgl from 'mapbox-gl';
 import '@latticejs/map/styles/style.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { token } from '../../config';
-import '../css/style.css';
 
 class MapBox extends Component {
   constructor(props) {
@@ -23,9 +22,6 @@ class MapBox extends Component {
     this.countyLegendView = this.getCountyLegendView();
   }
 
-  /**
-   * Callback function after the Map is loaded.
-   */
   afterMapLoad(mapObj) {
     this.mapObj = mapObj;
     let navigation = new Mapboxgl.NavigationControl();
@@ -40,9 +36,6 @@ class MapBox extends Component {
     this.manageZoom();
   }
 
-  /**
-   * Set the layer for county and state.
-   */
   stateCountyLayerSetter() {
     this.mapObj.addLayer(
       {
@@ -127,9 +120,6 @@ class MapBox extends Component {
     );
   }
 
-  /**
-   * Manages the zoom functionality.
-   */
   manageZoom() {
     let stateLegendEl = document.getElementById('state-legend');
     let countyLegendEl = document.getElementById('county-legend');
@@ -145,9 +135,6 @@ class MapBox extends Component {
     });
   }
 
-  /**
-   * Returns the State Layer legend.
-   */
   getStateLegendView() {
     return (
       <div id="state-legend" className="legend">
@@ -183,9 +170,6 @@ class MapBox extends Component {
     );
   }
 
-  /**
-   * Returns the County Layer legend.
-   */
   getCountyLegendView() {
     return (
       <div id="county-legend" className="legend" style={{ display: 'none' }}>

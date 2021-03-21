@@ -17,6 +17,8 @@ import HistoryIcon from '@material-ui/icons/History';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import PhoneIcon from '@material-ui/icons/Phone';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
+import MapBox from '../LatticeJS/MapBox';
+import What3WordsTextField from './What3WordsTextField';
 
 type DeliveryViewProps = {
     pageTitle: string
@@ -77,9 +79,11 @@ const DeliveryView: FunctionComponent<DeliveryViewProps> = ({ pageTitle }: Deliv
                 justify="center"
                 alignItems="center"
             >
-                <Typography>
-                    jnjknjnjn
+                <Typography className={classes.pageTitle} variant="h6" noWrap>
+                    {pageTitle}
                 </Typography>
+                <MapBox></MapBox>
+                <What3WordsTextField></What3WordsTextField>
                 <Button
                     variant="contained"
                     color="default"
@@ -88,7 +92,7 @@ const DeliveryView: FunctionComponent<DeliveryViewProps> = ({ pageTitle }: Deliv
                 >
                     Call Driver
       </Button>
-      <Button
+                <Button
                     variant="contained"
                     color="default"
                     className={classes.button}

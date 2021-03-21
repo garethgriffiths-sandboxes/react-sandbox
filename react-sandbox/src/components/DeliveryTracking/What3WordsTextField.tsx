@@ -1,7 +1,8 @@
 import { FunctionComponent } from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
-type What3WordsInputProps = {
+type What3WordsTextFieldProps = {
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -11,11 +12,12 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const What3WordsInput: FunctionComponent<What3WordsInputProps> = ({}: What3WordsInputProps) => {
+const What3WordsTextField: FunctionComponent<What3WordsTextFieldProps> = ({ }: What3WordsTextFieldProps) => {
     const classes = useStyles();
 
     return <div className={classes.what3WordsInput}>
+        <TextField color="secondary" label="what3words" />
     </div>;
 }
 
-export default What3WordsInput;
+export default What3WordsTextField;
