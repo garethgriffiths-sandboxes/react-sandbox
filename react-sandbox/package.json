@@ -21,7 +21,10 @@
   "devDependencies": {
     "@latticejs/ag-grid": "^1.0.1-beta.3",
     "@types/react-router-dom": "^5.3.1",
-    "react-scripts": "^4.0.3"
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "react-scripts": "^4.0.3",
+    "tailwindcss": "^2.2.17"
   },
   "scripts": {
     "test": "echo 'test'",
