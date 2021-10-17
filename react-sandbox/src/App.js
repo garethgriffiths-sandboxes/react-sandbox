@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "tailwind.css"
 import {
   BrowserRouter,
   Switch,
