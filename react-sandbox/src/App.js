@@ -25,8 +25,10 @@ const styles = (theme) => ({
     backgroundColor: '#FFFFFF',
   },
   appBar: {
-    backgroundColor: theme.palette.primary[theme.palette.type],
-    color: theme.palette.primary.contrastText
+    padding: '20px',
+    backgroundColor: '#FFFFFF',
+    borderColor: '#FFFFFF',
+    boxShadow: 'none'
   }
 });
 
@@ -78,7 +80,7 @@ const App = (props) => {
           <div className={classes.root}>
             <NavBar position="static" className={classes.appBar}>
             </NavBar>
-            <AppBar position="static" color="default">
+            <AppBar className={classes.appBar} position="static" color="default">
               <Tabs
                 value={selectedTab}
                 onChange={handleChange}
@@ -86,10 +88,17 @@ const App = (props) => {
                 textColor="primary"
                 aria-label="scrollable force tabs example"
               >
-                <Tab label="Delivery Tracking" {...TabProps(0)} />
+                <Tab label="Documentation Generator" {...TabProps(0)} />
               </Tabs>
             </AppBar>
             <TabPanel value={selectedTab} index={0}>
+              <Grid container justify="center" spacing={Number(0)}>
+                <Grid item xs={12}>
+                  Documentation Generator
+                </Grid>
+              </Grid>
+            </TabPanel>
+            <TabPanel value={selectedTab} index={1}>
               <Grid container justify="center" spacing={Number(0)}>
                 <Grid item xs={12}>
                   <DeliveryView pageTitle={deliveryViewPageTitle}></DeliveryView>
