@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -10,14 +9,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
 import HistoryIcon from '@material-ui/icons/History';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import PhoneIcon from '@material-ui/icons/Phone';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
-import MapBox from '../LatticeJS/MapBox';
 import What3WordsTextField from './What3WordsTextField';
 
 type DeliveryViewProps = {
@@ -82,7 +79,6 @@ const DeliveryView: FunctionComponent<DeliveryViewProps> = ({ pageTitle }: Deliv
                 <Typography className={classes.pageTitle} variant="h6" noWrap>
                     {pageTitle}
                 </Typography>
-                <MapBox></MapBox>
                 <What3WordsTextField></What3WordsTextField>
                 <Button
                     variant="contained"

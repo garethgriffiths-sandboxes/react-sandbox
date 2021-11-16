@@ -3,6 +3,7 @@ import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 type What3WordsTextFieldProps = {
+    value?: string
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const What3WordsTextField: FunctionComponent<What3WordsTextFieldProps> = ({ }: What3WordsTextFieldProps) => {
+const What3WordsTextField: FunctionComponent<What3WordsTextFieldProps> = ({ value }: What3WordsTextFieldProps) => {
     const classes = useStyles();
 
     return <div className={classes.what3WordsInput}>
