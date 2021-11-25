@@ -3,13 +3,15 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+import DocumentationGenerator from './DocumentationGenerator/components/DocumentationGenerator'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
-          <div> App
+          <div>
+            <DocumentationGenerator></DocumentationGenerator>
           </div>} exact />
       </Routes>
     </BrowserRouter>
