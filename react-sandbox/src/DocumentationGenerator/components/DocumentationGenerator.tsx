@@ -1,5 +1,6 @@
 import * as esbuild from 'esbuild-wasm'
 import { useState, useEffect, useRef } from 'react';
+import { fetchPlugin } from '../plugins/fetch-plugin';
 import { unpkgPathPlugin } from '../plugins/unpkg-path-plugin';
 
 const DocumentationGenerator = () => {
@@ -10,7 +11,7 @@ const DocumentationGenerator = () => {
     const startService = async () => {
         ref.current = await esbuild.startService({
             worker: true,
-            wasmURL: '/esbuild.wasm'
+            wasmURL: 'https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm'
         });
     }
 
@@ -28,14 +29,20 @@ const DocumentationGenerator = () => {
                 entryPoints: ['index.js'],
                 bundle: true,
                 write: false,
-                plugins: [unpkgPathPlugin()],
+                plugins: [unpkgPathPlugin(), fetchPlugin(input)],
                 define: {
                     'process.env.NODE_ENV': '"production"',
-                    global: 'window'
-                }
+                    global: 'window',
+                },
             });
 
         setCode(result.outputFiles[0].text);
+        try {
+            eval(result.outputFiles[0].text);
+        }
+        catch (err) {
+
+        }
     }
 
     return <div>
