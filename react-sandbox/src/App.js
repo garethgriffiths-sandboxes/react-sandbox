@@ -1,18 +1,19 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from 'react-router-dom';
-import DocumentationGenerator from './DocumentationGenerator/components/documentation-generator'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DocumentationGeneratorApp from "./DocumentationGenerator/App";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={
-          <div>
-            <DocumentationGenerator></DocumentationGenerator>
-          </div>} exact />
+        <Route
+          path="/"
+          element={
+            <div>
+              <DocumentationGeneratorApp />
+            </div>
+          }
+          exact
+        />
       </Routes>
     </BrowserRouter>
   );
