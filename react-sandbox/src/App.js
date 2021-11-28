@@ -3,7 +3,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import DocumentationGenerator from './DocumentationGenerator/components/DocumentationGenerator'
+import DocumentationGenerator from './DocumentationGenerator/components/documentation-generator'
 
 const App = () => {
   return (

@@ -2,6 +2,8 @@ import * as esbuild from 'esbuild-wasm'
 import { useState, useEffect, useRef } from 'react';
 import { fetchPlugin } from '../plugins/fetch-plugin';
 import { unpkgPathPlugin } from '../plugins/unpkg-path-plugin';
+import CodeEditor from './CodeEditor/code-editor';
+import 'bulmaswatch/slate/bulmaswatch.min.css';
 
 const DocumentationGenerator = () => {
     const ref = useRef<any>();
@@ -61,8 +63,9 @@ const DocumentationGenerator = () => {
     </html>`;
 
     return <div>
-        <textarea value={input} onChange={(e) => setInput(e.target.value)}>
-        </textarea>
+        <CodeEditor
+            initialValue={input}
+            onChange={(value) => setInput(value)} />
         <div>
             <button onClick={onClick}>Submit</button>
         </div>
